@@ -1,12 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import navbar from '../src/components/navbar.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-    <h1>MARKET</h1>
+    <>
+    <body>
+    <nav className='navbar'></nav>
     <footer>Marco Ticiano Barabino-INC-2022</footer>
-    </div>);
+    </body>
+    </>
+    );
+    
 }
 
-export default App;
+export default navbar;
+

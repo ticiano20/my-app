@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -9,7 +10,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 0s linear;
   }
 }
 
@@ -35,4 +36,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* Estilos */
+.body{
+  background-color: blueviolet;
 }
