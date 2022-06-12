@@ -1,18 +1,19 @@
 import './App.css';
-import navbar from '../src/components/navbar.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import BarNav from '../src/components/barnav.js';
+
+
+
 
 function App() {
+  
   return (
     <>
-    <body>
-    <nav className='navbar'></nav>
-    <footer>Marco Ticiano Barabino-INC-2022</footer>
-    </body>
+    <BarNav />
     </>
+    
     );
     
-}
+};
 
-export default navbar;
+export default App;
 
