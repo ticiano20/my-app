@@ -5,15 +5,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react';
 import CartWid from './cartwidget';
 
-
-
-
 function BarNav() {
   return (
-    
     <Navbar bg="ligth" variant="ligth" expand="lg" sticky="top">
-       
-      <Container>
+       <Container>
         <Navbar.Brand href="#home">IMPORTACIONES</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
@@ -25,13 +20,10 @@ function BarNav() {
               <NavDropdown.Item href="./contacto.html">Contacto</NavDropdown.Item>           
             </NavDropdown>
           </Nav>
-          
-            <CartWid/>
-          
-        </Navbar.Collapse>
+          <CartWid/>
+         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
-
 export default BarNav;
