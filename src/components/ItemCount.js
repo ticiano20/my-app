@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
 const ItemCount =() => {
-    const [counter, setCounter]= useState (0);
+    const [counter, setCounter, stock]= useState (0);
     const uno =() =>{
         setCounter(counter + 1)
     };
     const dos = () => {
         setCounter(counter - 1)
     };
+    let tres =(stock===5); 
     return(
         <div style={{
             display: 'flex',
@@ -48,6 +49,15 @@ const ItemCount =() => {
           color: 'white',
         }}
           onClick={dos}>Quitar</button>
+          <button style={{
+          fontSize: '50%',
+          position: 'relative',
+          top: '20vh',
+          marginLeft: '5px',
+          backgroundColor: 'black',
+          borderRadius: '8%',
+          color: 'white',
+        }}onClick={tres}>Añadir al Carrito</button>
       </div>
     </div>
  

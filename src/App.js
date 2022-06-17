@@ -10,7 +10,6 @@ function App() {
     <BarNav/>
     <CartWid/>
     <ItemListContainer/>
-    <ItemListContainer/>
     </>
     );
 };
