@@ -7,10 +7,10 @@ import { ItemDetailContainer } from './components/ItemDetailContainer';
 
 function App() {
   return (
-    <>
+     <>
     <BarNav/>
-    <CartWid/>
     <ItemListContainer/>
+    <br></br>
     <ItemDetailContainer/>
     </>
     );

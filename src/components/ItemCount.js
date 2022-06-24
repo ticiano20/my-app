@@ -13,18 +13,19 @@ const ItemCount =() => {
         <div style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
+            alignItems:'self-end',
+            justifyContent:'end',
             fontSize: '300%',
-            position: 'absolute',
+            position:'absolute',
             width: '100%',
             height: '100%',
             top: '-15%',
           }}>
             <div style={{
-        fontSize: '120%',
+        fontSize: '110%',
         position: 'relative',
         top: '20vh',
+        marginRight:'28vh'
       }}>
         {counter}
       </div>

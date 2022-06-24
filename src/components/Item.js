@@ -1,3 +1,5 @@
+import React from "react";
+import ItemCount from "./ItemCount";
 export const Item = ({ category, img, img2, name }) => {
     return (
         <>
@@ -5,9 +7,11 @@ export const Item = ({ category, img, img2, name }) => {
             <h3>{category}</h3>
             <img src={img} alt={category} />
             <img src={img2} alt={category} />
-            <br />
+            <ItemCount/>
+            
             <button>Ver Mas</button>
-            <hr />
+            
         </>
     )
 }
+export default Item;

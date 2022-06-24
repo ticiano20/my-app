@@ -37,6 +37,9 @@
     transform: rotate(360deg);
   }
 }
+.fondo{
+  background-color: #33eb3c77;;
+}
 /* Estilos */
 .body{
   background-color: blueviolet;

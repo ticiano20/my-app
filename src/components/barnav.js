@@ -7,7 +7,7 @@ import CartWid from './cartwidget';
 
 function BarNav() {
   return (
-    <Navbar bg="ligth" variant="ligth" expand="lg" sticky="top">
+    <Navbar bg="dark" variant="ligth" expand="lg" sticky="top">
        <Container>
         <Navbar.Brand href="#home">IMPORTACIONES</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>

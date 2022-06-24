@@ -1,19 +1,20 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { getProductById } from "./async/asyncMock";
+import ItemCount from "./ItemCount";
 import { ItemDetail } from "./ItemDetail";
 
 export const ItemDetailContainer = () => {
 
-    const [item, setItems] = useState([])
+    const [item, setItem] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const id = 2
+    const id = 2;
 
     useEffect(() => {
         getProductById(id)
             .then(res => {
-                setItems(res)
+                setItem(res)
                 setLoading(false)
             }
             )
@@ -24,13 +25,14 @@ export const ItemDetailContainer = () => {
 
     return (
         <>
-            <br />
-            <br /><br /><br />
-            <h1>ITEM DETAIL: </h1>
-            <hr />
+            <h1>Detalle del producto:</h1>
+            <hr></hr>
             {loading ? <div>Cargando...</div>
                 : <ItemDetail img={item.img} name={item.name} description={item.description} />
+                
             }
+            
+            
         </>
     )
 }

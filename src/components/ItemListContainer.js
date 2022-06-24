@@ -2,24 +2,28 @@ import React from 'react';
 import { useEffect,useState } from 'react';
 import {ItemList} from './ItemList.js';
 import ItemCount from './ItemCount';
-import { getProducts, listadoProdutos } from "./async/asyncMock"
+import { getProducts, listadoProductos } from "./async/asyncMock"
+import { ItemDetail } from './ItemDetail.js';
+import { ItemDetailContainer } from './ItemDetailContainer.jsx';
 
 
 function ItemListContainer (props){
     console.log (props);
-    const [items, setItems]= useState([])
+    const [item, setItem]= useState([])
     useEffect(()=>{
         getProducts()
-            .then(res => setItems(res))
+            .then(res => setItem(res))
             .catch(err => console.log(err))
     },[])
     return(
         <div className='it'>
         <h1 style={{backgroundColor:'grey', fontSize:'50px'}}>Productos</h1>
-        <ItemCount/>
-        {items.length > 0 ? <ItemList productos={items} />
+        <br></br>
+        {item.length > 0 ? 
+       <ItemList productos={item} />
                 : <div>Cargando...</div>
             }
+            
         </div>)
 };
 export default ItemListContainer;

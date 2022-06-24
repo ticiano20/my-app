@@ -1,11 +1,11 @@
-export const listadoProdutos=[
+export const listadoProductos=[
 	{	id:1,
 		category:"zapatillas",
 		content:"",
 		description:"ZAPATILLAS GRAND COURT. ZAPATILLAS MINIMALISTAS CON UN ESTILO CLÁSICO",		
         img:"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c9598a1cf2924169888aa9810136e6d6_9366/Zapatillas_Grand_Court_Blanco_F36485_01_standard.jpg",		
         img2:"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f8daa3996318420490c6a9810136ff67_9366/Zapatillas_Grand_Court_Blanco_F36485_02_standard_hover.jpg",
-		name:"mock - Zapatillas Grand Court",
+		name:"Zapatillas Grand Court",
 		price:12499,
 		stock:5
 	},
@@ -15,7 +15,7 @@ export const listadoProdutos=[
 		description:"ZAPATILLAS RUNFALCON. ZAPATILLAS DE MÁXIMA SUJECIÓN PARA TUS SALIDAS DIARIAS A CORRER",		
 		img:"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/449c838942da409f8ba9a97f00d3cffe_9366/Zapatillas_Runfalcon_Negro_F36199_01_standard.jpg",		
         img2:"https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ebac268f4d7e4e389006a97f00d3fbfb_9366/Zapatillas_Runfalcon_Negro_F36199_04_standard.jpg",
-		name:"mock - Zapatillas RunFalcon",
+		name:"Zapatillas RunFalcon",
 		price:11499,
 		stock:4
 	},
@@ -64,8 +64,8 @@ export const listadoProdutos=[
 export const getProducts = (categoria) =>{
     return new Promise ((resolve,reject) => {
         setTimeout(() => {
-            if(listadoProdutos.length>0){
-                resolve(listadoProdutos.filter(unProducto => unProducto.category === categoria))}
+            if(listadoProductos.length>0){
+                resolve(listadoProductos.filter(unProducto => unProducto.category === categoria))}
             else{
                 reject("Sin datos")
             } 
@@ -76,8 +76,8 @@ export const getProducts = (categoria) =>{
 export const getProductById = (id) =>{
     return new Promise ((resolve,reject) => {
         setTimeout(() => {
-            if(listadoProdutos.length>0){
-                resolve(listadoProdutos.find(unProducto => unProducto.id === parseInt(id)))}
+            if(listadoProductos.length>0){
+                resolve(listadoProductos.find(unProducto => unProducto.id === parseInt(id)))}
             else{
                 reject("Sin datos")
             } 
