@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { getProductById } from "./async/asyncMock";
-import ItemCount from "./ItemCount";
-import { ItemDetail } from "./ItemDetail";
+import { getProductById } from "../async/asyncMock";
+import { ItemDetail } from "../itemdetail/ItemDetail";
 
 export const ItemDetailContainer = () => {
 

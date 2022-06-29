@@ -1,6 +1,6 @@
 import React from 'react';
-import Item from './Item.js';
-import ItemCount from './ItemCount.js';
+import Item from '../Item/Item.js';
+import ItemCount from '../itemcount/ItemCount.js';
 
 
 export const ItemList = ({ productos }) => {

@@ -59,19 +59,19 @@ export const listadoProductos=[
 		price:5999,
 		stock:7
 	}
-]
+];
 
-export const getProducts = (categoria) =>{
+export const getProducts = (category) =>{
     return new Promise ((resolve,reject) => {
         setTimeout(() => {
             if(listadoProductos.length>0){
-                resolve(listadoProductos.filter(unProducto => unProducto.category === categoria))}
+                resolve(listadoProductos.filter(unProducto => unProducto.category === category))}
             else{
                 reject("Sin datos")
             } 
         }, 500);
     })
-}
+};
 
 export const getProductById = (id) =>{
     return new Promise ((resolve,reject) => {
@@ -83,5 +83,5 @@ export const getProductById = (id) =>{
             } 
         }, 500);
     })
-}
+};
 

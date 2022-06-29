@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect,useState } from 'react';
-import {ItemList} from './ItemList.js';
-import ItemCount from './ItemCount';
-import { getProducts, listadoProductos } from "./async/asyncMock"
-import { ItemDetail } from './ItemDetail.js';
-import { ItemDetailContainer } from './ItemDetailContainer.jsx';
+import {ItemList} from '../itemlist/ItemList.js';
+import ItemCount from '../itemcount/ItemCount';
+import { getProducts, listadoProductos } from "../async/asyncMock"
+import { ItemDetail } from '../itemdetail/ItemDetail.js';
+import { ItemDetailContainer } from '../itemdetailcontainer/ItemDetailContainer.jsx';
 
 
 function ItemListContainer (props){
@@ -14,7 +14,7 @@ function ItemListContainer (props){
         getProducts()
             .then(res => setItem(res))
             .catch(err => console.log(err))
-    },[])
+    },[]);
     return(
         <div className='it'>
         <h1 style={{backgroundColor:'grey', fontSize:'50px'}}>Productos</h1>
