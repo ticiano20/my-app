@@ -1,14 +1,14 @@
 import React from 'react';
 import { useEffect,useState } from 'react';
 import {ItemList} from '../itemlist/ItemList.js';
-import ItemCount from '../itemcount/ItemCount';
+// import ItemCount from '../itemcount/ItemCount';
 import { getProducts, listadoProductos } from "../async/asyncMock"
-import { ItemDetail } from '../itemdetail/ItemDetail.js';
-import { ItemDetailContainer } from '../itemdetailcontainer/ItemDetailContainer.jsx';
+// import { ItemDetail } from '../itemdetail/ItemDetail.js';
+// import { ItemDetailContainer } from '../itemdetailcontainer/ItemDetailContainer.jsx';
 import {Link} from 'react-router-dom';
 import Item from '../Item/Item.js';
 
-function ItemListContainer() {
+function ItemListContainer(listadoProductos) {
     
     const [item, setItem]= useState([])
     useEffect(()=>{
@@ -36,4 +36,10 @@ function ItemListContainer() {
            
         </div>)
 };
-export default ItemListContainer;
+export default ItemListContainer; 
+
+// const ItemListContainer =({category,}) =>{
+//     const [items, setItems]= useState([])
+        
+//     })
+// }

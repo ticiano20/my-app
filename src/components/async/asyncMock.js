@@ -61,11 +61,11 @@ export const listadoProductos=[
 	}
 ];
 
-export const getProducts = (category) =>{
+export const getProducts = (listadoProductos) =>{
     return new Promise ((resolve,reject) => {
         setTimeout(() => {
             if(listadoProductos.length>0){
-                resolve(listadoProductos.filter(unProducto => unProducto.category === category))}
+                resolve(listadoProductos.filter(unProducto => unProducto.category ))}
             else{
                 reject("Sin datos")
             } 
@@ -84,4 +84,3 @@ export const getProductById = (id) =>{
         }, 500);
     })
 };
-

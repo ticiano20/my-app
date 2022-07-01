@@ -6,8 +6,7 @@ export const ItemDetail = ({ img, name, description }) => {
             <h1>{name}</h1>
             <h3 style={{fontSize:'75%'}}>{description}</h3>
             <img src={img} alt={description} style={{width:'50%', height:'50%'}} />
-            
-            { <ItemCount  /> }
+             <ItemCount  /> 
             
         </div>
     )

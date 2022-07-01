@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Item from '../Item/Item.js';
-import ItemCount from '../itemcount/ItemCount.js';
+// import ItemCount from '../itemcount/ItemCount.js';
 
 
 export const ItemList = ({ productos }) => {
@@ -9,11 +10,13 @@ export const ItemList = ({ productos }) => {
 
     return (
         <div>
+            <Link to="/unProducto.id">
             {
                 // productos.map((unProducto) => (<Item key={unProducto.id} category={unProducto.category} img={unProducto.img} name={unProducto.name} />))
-                productos.map((unProducto) => (<Item key={unProducto.id} category={unProducto.category} />))
+                 productos.map((unProducto) => (<ItemList key={unProducto.id} category={unProducto.category} />))
          
             }
+            </Link>
         </div>
     )
 }
