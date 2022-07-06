@@ -1,42 +1,24 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getProductById } from "../async/asyncMock";
-import { ItemDetail } from "../itemdetail/ItemDetail";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router";
+import ItemDetail from "../itemdetail/ItemDetail";
+import Spinner from "../spinner/spinner";
 
-export const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
+  const [detail, setDetail] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { itemId } = useParams();
 
-    const [item, setItem] = useState([])
-    const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    axios
+      .get(`https://fakestoreapi.com/products/${itemId}`)
+      .then((res) => setDetail(res.data))
+      .then(setLoading(false));
+  }, [itemId]);
 
-    let {id}= useParams();
-    
+  console.log(detail);
 
-    useEffect(() => {
-        getProductById(id)
-            .then(res => {
-                setItem(res)
-                setLoading(false)
-            }
-            )
-            .catch(err => console.log(err))
-    }, [])
+  return <div>{loading ? <Spinner /> : <ItemDetail detail={detail} />}</div>;
+};
 
-    console.log("item:", item)
-
-    return (
-        <div>
-            <Link Link to="/item.id">
-            <h1>Detalle del producto:</h1>
-            <hr></hr>
-            
-            {loading ? <div>Cargando...</div>
-                : <ItemDetail img={item.img} name={item.name} description={item.description} key={item.id} />
-                
-            }
-           
-            </Link>
-        </div>
-    )
-}
+export default ItemDetailContainer;

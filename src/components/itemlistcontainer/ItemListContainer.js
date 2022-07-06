@@ -1,45 +1,58 @@
-import React from 'react';
-import { useEffect,useState } from 'react';
-import {ItemList} from '../itemlist/ItemList.js';
-// import ItemCount from '../itemcount/ItemCount';
-import { getProducts, listadoProductos } from "../async/asyncMock"
-// import { ItemDetail } from '../itemdetail/ItemDetail.js';
-// import { ItemDetailContainer } from '../itemdetailcontainer/ItemDetailContainer.jsx';
-import {Link} from 'react-router-dom';
-import Item from '../Item/Item.js';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import ItemList from "../itemlist/ItemList";
+import { useParams } from "react-router";
+import Spinner from "../spinner/spinner";
 
-function ItemListContainer(listadoProductos) {
-    
-    const [item, setItem]= useState([])
-    useEffect(()=>{
-        
-        getProducts()
-            .then(res => setItem(res))
-            .catch(err => console.log(err))
-            
-    },[]);
-    return(
-        <div className='it'>
-            
-        <h1 style={{backgroundColor:'grey', fontSize:'50px'}}>Productos</h1>
-          
-        <br></br>
-       
-        {item.length > 0 ? 
-        <Link to="/">
-       <ItemList productos={<Item/>} />
-    
-       </Link>
-                : <div>Cargando...</div>
-            }
-            
-           
-        </div>)
+const ItemListContainer = () => {
+  const [productos, setProductos] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const { categoryId } = useParams();
+
+  const filterProducts = productos.filter(function productosFiltrados(cat) {
+    if (cat.category === categoryId) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log(filterProducts);
+
+  useEffect(() => {
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((res) => setProductos(res.data))
+      .then(setLoading(false));
+    console.log(productos);
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://fakestoreapi.com/products/${categoryId}`)
+      .then((res) => setCategories(res))
+      .then(setLoading(false));
+    console.log(categories);
+  }, [categoryId]);
+  console.log(categories);
+
+  return (
+    <div>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div>
+          <h1>ItemListContainer</h1>
+          <ItemList
+            productos={productos}
+            categories={filterProducts}
+            filterProducts={filterProducts}
+          />{" "}
+        </div>
+      )}
+    </div>
+  );
 };
-export default ItemListContainer; 
 
-// const ItemListContainer =({category,}) =>{
-//     const [items, setItems]= useState([])
-        
-//     })
-// }
+export default ItemListContainer;

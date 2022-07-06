@@ -1,6 +1,6 @@
-
 .App {
   text-align: center;
+  font-family: 'Montserrat';
 }
 
 .App-logo {
@@ -8,9 +8,10 @@
   pointer-events: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 0s linear;
+    animation: App-logo-spin infinite 20s linear;
   }
 }
 
@@ -36,11 +37,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.fondo{
-  background-color: #33eb3c77;;
-}
-/* Estilos */
-.body{
-  background-color: blueviolet;
 }
