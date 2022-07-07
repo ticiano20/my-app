@@ -42,6 +42,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import "./App.css";
 import { CarritoContext } from "./components/cartcontext/cartcontext";
 import Routing from "./components/routes/routes";
+import ResponsiveAppBar from "./components/barnav/barnav";
 
 function App() {
   const darkTheme = createTheme({
@@ -54,6 +55,7 @@ function App() {
   });
   return (
     <div className="App">
+      <ResponsiveAppBar/>
       <ThemeProvider theme={darkTheme}>
         <CarritoContext>
           <Routing />

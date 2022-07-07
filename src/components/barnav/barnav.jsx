@@ -51,6 +51,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
 // import AddIcon from '@mui/icons-material/Add';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
@@ -92,7 +93,7 @@ const ResponsiveAppBar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
+            <MenuItem
               id="menu-appbar"
               anchorOrigin={{
                 vertical: "bottom",
@@ -110,7 +111,7 @@ const ResponsiveAppBar = () => {
               <MenuItem>
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
-            </Menu>
+            </MenuItem>
           </Box>
           {/* <AddIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
@@ -175,7 +176,7 @@ const ResponsiveAppBar = () => {
                 </Badge>
               </IconButton>
             </Tooltip>
-            <Menu
+            <MenuItem
               sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorOrigin={{
@@ -191,7 +192,7 @@ const ResponsiveAppBar = () => {
               <MenuItem>
                 <Typography textAlign="center">NavBar</Typography>
               </MenuItem>
-            </Menu>
+            </MenuItem>
           </Box>
         </Toolbar>
       </Container>
