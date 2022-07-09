@@ -7,10 +7,10 @@ const ItemList = ({ categories }) => {
     <div>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          {categories.map((producto) => {
+          {categories.map((products) => {
             return (
-              <Grid key={producto.id} item xs={12} sm={6} md={4} lg={3}>
-                <Item key={producto.id} producto={producto} />
+              <Grid key={products.id} item xs={12} sm={6} md={4} lg={3}>
+                <Item key={products.id} products={products} />
               </Grid>
             );
           })}

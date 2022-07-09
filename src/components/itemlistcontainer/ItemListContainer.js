@@ -5,13 +5,13 @@ import { useParams } from "react-router";
 import Spinner from "../spinner/spinner";
 
 const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
+  const [products, setProductos] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const { categoryId } = useParams();
 
-  const filterProducts = productos.filter(function productosFiltrados(cat) {
+  const filterProducts = products.filter(function productosFiltrados(cat) {
     if (cat.category === categoryId) {
       return true;
     } else {
@@ -22,15 +22,15 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     axios
-      .get("https://fakestoreapi.com/products")
+      .get("https://api.escuelajs.co/api/v1/products")
       .then((res) => setProductos(res.data))
       .then(setLoading(false));
-    console.log(productos);
+    console.log(products);
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://fakestoreapi.com/products/${categoryId}`)
+      .get(`https://api.escuelajs.co/api/v1/categories/2${categoryId}`)
       .then((res) => setCategories(res))
       .then(setLoading(false));
     console.log(categories);
@@ -45,7 +45,7 @@ const ItemListContainer = () => {
         <div>
           <h1>ItemListContainer</h1>
           <ItemList
-            productos={productos}
+            products={products}
             categories={filterProducts}
             filterProducts={filterProducts}
           />{" "}

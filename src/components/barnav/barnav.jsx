@@ -51,7 +51,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
+// import Menu from "@mui/material/Menu";
 // import AddIcon from '@mui/icons-material/Add';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
@@ -80,7 +80,7 @@ const ResponsiveAppBar = () => {
               textDecoration: "none",
             }}
           >
-            ECOMMERCEReact
+            MarkeT
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -133,9 +133,9 @@ const ResponsiveAppBar = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Link to={"/category/jewelery"} style={{ textDecoration: "none" }}>
+            <Link to={"/category/{2}"} style={{ textDecoration: "none" }}>
               <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Joyería
+               uno
               </Button>
             </Link>
             <Link
@@ -143,7 +143,7 @@ const ResponsiveAppBar = () => {
               style={{ textDecoration: "none" }}
             >
               <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Electrónica
+                dos
               </Button>
             </Link>
             <Link
@@ -151,7 +151,7 @@ const ResponsiveAppBar = () => {
               style={{ textDecoration: "none" }}
             >
               <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Ropa masculina
+                tres
               </Button>
             </Link>
             <Link
@@ -159,7 +159,7 @@ const ResponsiveAppBar = () => {
               style={{ textDecoration: "none" }}
             >
               <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Ropa femenina
+                4
               </Button>
             </Link>
           </Box>
@@ -178,7 +178,7 @@ const ResponsiveAppBar = () => {
             </Tooltip>
             <MenuItem
               sx={{ mt: "45px" }}
-              id="menu-appbar"
+              id="Mis Compras"
               anchorOrigin={{
                 vertical: "top",
                 horizontal: "right",

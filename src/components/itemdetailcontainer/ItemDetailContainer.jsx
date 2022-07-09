@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     axios
-      .get(`https://fakestoreapi.com/products/${itemId}`)
+      .get(`https://api.escuelajs.co/api/v1/categories/1/products/${itemId}`)
       .then((res) => setDetail(res.data))
       .then(setLoading(false));
   }, [itemId]);

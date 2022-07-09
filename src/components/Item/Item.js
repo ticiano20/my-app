@@ -6,23 +6,23 @@ import Typography from "@mui/material/Typography";
 import { NavLink } from "react-router-dom";
 // import "./Item.css";
 
-const Item = ({ producto }) => {
+const Item = ({ products }) => {
   return (
     <div className="item">
-      <NavLink to={"/item/" + producto.id}  style={{ textDecoration: 'none'}}>
+      <NavLink to={"/item/" + products.id}  style={{ textDecoration: 'none'}}>
         <Card sx={{ maxWidth: 350 }}>
           <Typography gutterBottom variant="h5" component="div">
-            {producto.title}
+            {products.title}
           </Typography>
           <CardMedia
             component="img"
             height={300}
-            image={producto.image}
-            alt={producto.title}
+            image={products.image}
+            alt={products.title}
           />
           <CardContent>
             <Typography variant="body2" color="text.secondary">
-              {producto.price}
+              {products.price}
             </Typography>
           </CardContent>
         </Card>
