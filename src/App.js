@@ -37,12 +37,13 @@
 //     );
 // };
 // export default App;
-import React from "react";
+import React, { useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material";
 import "./App.css";
 import { CarritoContext } from "./components/cartcontext/cartcontext";
 import Routing from "./components/routes/routes";
-
+import {db} from '../src/components/firebase';
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 function App() {
   const darkTheme = createTheme({
@@ -53,6 +54,21 @@ function App() {
       },
     },
   });
+  // const [autos,setAutosData]= useState([]);
+ 
+  //   const getAutos = async () =>{ 
+  //   const q = query(collection(db, "autos"), where("capital", "==", true));
+  //   const querySnapshot = await getDocs(q);
+  //   const docs = [];
+
+  //   querySnapshot.forEach ((doc)=>{
+  //     docs.push ({...doc.data(), id:doc.id})
+  //   })
+  //   setAutosData(docs);
+  // };
+  // useEffect(() =>{
+  //   getAutos();
+  // },[]);
   return (
     <div className="App">
       
