@@ -6,20 +6,20 @@ import Spinner from "../spinner/spinner";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const [detail, setDetail] = useState([]);
+  // const [detail, setDetail] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { itemId } = useParams();
+  const [data, setData] = useState({});
+  const { detailId} = useParams();
 
   useEffect(() => {
     const querydb = getFirestore();
     const queryDoc= doc(querydb, 'autos', 'BTw4jVWppZa4b1gDNiqD');
     getDoc(queryDoc)
-      .then(res=> console.log({id:res.id,...res.data()}));
+      .then(res=> setData({id:res.id,...res.data()}));
   }, []);
 
-  console.log(detail);
 
-  return <div>{loading ? <Spinner /> : <ItemDetail detail={detail} />}</div>;
+  return <div>{loading ? <Spinner /> : <ItemDetail data={data} />}</div>;
 };
 
 export default ItemDetailContainer;

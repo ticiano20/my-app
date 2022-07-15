@@ -42,7 +42,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import "./App.css";
 import { CarritoContext } from "./components/cartcontext/cartcontext";
 import Routing from "./components/routes/routes";
-import {db} from '../src/components/firebase';
+import {db} from '../src/components/firebase/firebaseconfig';
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 function App() {
