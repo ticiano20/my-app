@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../itemlist/ItemList";
 import { useParams } from "react-router";
 import Spinner from "../spinner/spinner";
-import { getFirestore, getDoc, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   // const [products, setProductos] = useState([]);
@@ -25,7 +25,8 @@ const ItemListContainer = () => {
   useEffect(() => {
     const querydb=getFirestore();
     const queryCollection= collection (querydb, 'autos');
-    getDocs(queryCollection)
+    const queryFilter = query(queryCollection, where('categoria','==','categoryId'));
+    getDocs(queryFilter)
        .then(res => (res.docs.map(autos =>({id:autos.id, ...autos.data()}))));
     
 
@@ -37,14 +38,15 @@ const ItemListContainer = () => {
         <div>
           <h1>ItemListContainer</h1>
           <ItemList
-            products={products}
-            categories={filterProducts}
-            filterProducts={filterProducts}
+            // products={products}
+            // categories={filterProducts}
+            // filterProducts={filterProducts}
           />{" "}
         </div>
       )}
     </div>
   );
-};
+},[categoryId]);
 
+}
 export default ItemListContainer;
