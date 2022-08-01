@@ -31,11 +31,11 @@ import {
                 <TableCell component="th" scope="row">
                   {prod.name}
                 </TableCell>
-                <TableCell align="center">{prod.amount}</TableCell>
-                <TableCell align="center">{prod.title}</TableCell>
-                <TableCell align="center">{prod.price}</TableCell>
+                <TableCell align="center">{data.numero}</TableCell>
+                <TableCell align="center">{data.titulo}</TableCell>
+                <TableCell align="center">{data.precio}</TableCell>
                 <TableCell align="center">
-                  <img src={prod.image} alt={prod.title} width={30} height={30} />
+                  <img src={data.img} alt={data.titulo} width={30} height={30} />
                 </TableCell>
               </TableRow>
             </TableBody>

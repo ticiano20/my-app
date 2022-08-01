@@ -47,6 +47,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
+
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
@@ -133,7 +134,7 @@ const ResponsiveAppBar = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Link to={"/category/{2}"} style={{ textDecoration: "none" }}>
+            <Link to={"/category/{autos}"} style={{ textDecoration: "none" }}>
               <Button sx={{ my: 2, color: "white", display: "block" }}>
                uno
               </Button>
