@@ -1,42 +1,31 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getProductById } from "../async/asyncMock";
-import { ItemDetail } from "../itemdetail/ItemDetail";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import ItemDetail from '../ItemDetail/ItemDetail'
+import mockProducto from '../../Utils/productMock'
 
-export const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
+    const [dataProduct, setDataProduct] = useState({})
 
-    const [item, setItem] = useState([])
-    const [loading, setLoading] = useState(true)
+    const getProduct = () => {
+        return new Promise((resolve, reject) => {
+            return resolve(mockProducto)
+        })
+    }
 
-    let {id}= useParams();
-    
-
-    useEffect(() => {
-        getProductById(id)
-            .then(res => {
-                setItem(res)
-                setLoading(false)
-            }
-            )
-            .catch(err => console.log(err))
+    useEffect( () => {
+        getProduct().then( (producto) => {
+            setDataProduct(producto)
+            //console.log("Llamada al mock:", producto)
+        }).finally( () => {
+            console.log("Termino la llamada")
+        })
     }, [])
 
-    console.log("item:", item)
-
     return (
-        <div>
-            <Link Link to="/item.id">
-            <h1>Detalle del producto:</h1>
-            <hr></hr>
+        <>
             
-            {loading ? <div>Cargando...</div>
-                : <ItemDetail img={item.img} name={item.name} description={item.description} key={item.id} />
-                
-            }
-           
-            </Link>
-        </div>
+            <ItemDetail data={dataProduct}/>
+        </>
     )
 }
+
+export default ItemDetailContainer

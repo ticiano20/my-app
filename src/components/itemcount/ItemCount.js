@@ -1,68 +1,19 @@
-import React, { useState } from "react";
+import React,{useState} from 'react'
+const ItemCount = ({stock}) => {
+    const [count, setCount] = useState(1)
 
-const ItemCount =() => {
-    const [counter, setCounter, stock]= useState (0);
-    const uno =() =>{
-        setCounter(counter + 1)
-    };
-    const dos = () => {
-        setCounter(counter - 1)
-    };
-    let tres =(stock===5); 
+    const onAdd = () => {
+        if(count < stock) {
+            setCount(count + 1)
+        }
+    }
     return(
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems:'self-end',
-            justifyContent:'end',
-            fontSize: '300%',
-            position:'absolute',
-            width: '100%',
-            height: '100%',
-            top: '-15%',
-          }}>
-            <div style={{
-        fontSize: '110%',
-        position: 'relative',
-        top: '20vh',
-        marginRight:'28vh'
-      }}>
-        {counter}
-      </div>
-      <div className="buttons">
-        <button style={{
-          fontSize: '50%',
-          position: 'relative',
-          top: '20vh',
-          marginRight: '5px',
-          backgroundColor: 'black',
-          borderRadius: '8%',
-          color: 'white',
-        }}
-          onClick={uno}>Agregar</button>
-        <button style={{
-          fontSize: '50%',
-          position: 'relative',
-          top: '20vh',
-          marginLeft: '5px',
-          backgroundColor: 'black',
-          borderRadius: '8%',
-          color: 'white',
-        }}
-          onClick={dos}>Quitar</button>
-          <button style={{
-          fontSize: '50%',
-          position: 'relative',
-          top: '20vh',
-          marginLeft: '5px',
-          backgroundColor: 'black',
-          borderRadius: '8%',
-          color: 'white',
-        }}onClick={tres}>Añadir al Carrito</button>
-      </div>
-    </div>
- 
-    );
+        <>
+            <button>-</button>
+            <p>{count}</p>
+            <button onClick={onAdd}>+</button>
+        </>
+    )
+}
 
-};
-export default ItemCount;
+export default ItemCount
